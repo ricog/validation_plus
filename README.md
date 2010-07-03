@@ -64,23 +64,9 @@ Adding a new single rule:
 	$Model->addValidation('field_name', $newRule);
 
 
-Adding an array of one or more rules:
+The new rule can be formatted as a simple rule, or a one rule array. See http://book.cakephp.org/view/1145/One-Rule-Per-Field for more details
 
-	$newRule = array(
-		'numeric' => array(
-			'rule' => 'numeric',
-			'message' => 'Invalid amount.',
-			'required' => false,
-			'allowEmpty' => true
-		)
-	);
-
-	$Model->addValidation('field_name', $newRule);
-
-	
-The new rule can be formatted as a simple rule, or a one rule array. See http://book.cakephp.org/view/1145/One-Rule-Per-Field for more details.
-
-_It is important to note that new rules with matching names will overwrite the original of the same name. So, in the second or third examples above, if there was already a 'numeric' rule, it would be overwritten. Any other existing rules would remain._
+_It is important to note that new rules with matching "rule" values will overwrite the original of the same name. So, in the second example above, if there was already a 'numeric' rule, it would be overwritten. Any other existing rules would remain._
 
 
  
